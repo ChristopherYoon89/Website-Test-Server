@@ -1,0 +1,89 @@
+{% extends "blog/base.html" %} 
+{% block content %}
+    <h1>About</h1>
+    Chris Yoon, MSc.
+    <hr>
+
+    <main role="main" class="container">
+      <div>
+       <p>{% load static %}
+        <img class="rounded-circle article-img" id="about-page-image" src="{% static 'blog/media/profile-pic.webp' %}">  </p> 
+      </div>
+
+      <div class="about-page-text text-muted">
+        <p><span><img class="about-page-icon" src="{% static 'blog/media/coolrobot.png' %}">Programmer / data scientist</span></p>
+        <p><span><img class="about-page-icon" src="{% static 'blog/media/businessman.png' %}">Founder · CEO Keasbey Company LLC / Founder · CTO of NEWS-KRAKE LTD</span></p>
+        <p><span style="width: 70%;"><img class="about-page-icon" src="{% static 'blog/media/Plane.png' %}">In love with
+          memes, tennis, steaks, horror, books, stand-up comedy and pc gaming</span></p>
+        <p><span><img class="about-page-icon" src="{% static 'blog/media/bitcoin.webp' %}">Bitcoin maximalist and Austrian school economist</span></p>
+          <p><span style="width: 70%;"><img class="about-page-icon" src="{% static 'blog/media/studency.png' %}">University of Edinburgh alumni</span></p>
+          <p><span><img class="about-page-icon" src="{% static 'blog/media/globe.png' %}">Originally from Graz, Styria / currently based in Budva, Montenegro</span></p>
+      </div>
+    
+
+      <div class="button-contact-container">
+        <a href="{% url 'contact' %}">
+          <button class="btn btn-outline-info" style="margin-top: 35px;">Contact</button>
+        </a>
+      </div>
+
+      <h3>Main Stack</h3>
+      
+      <div style="margin-top: 25px;">
+        <div class="about-page-text text-muted">
+          <p><span><img class="about-page-icon" src="{% static 'blog/media/Python_logo.webp' %}">Python</span></p>
+          <p><span><img class="about-page-icon" src="{% static 'blog/media/Django-Icon.webp' %}">Django</span></p>
+          <p><span><img class="about-page-icon" src="{% static 'blog/media/JavaScript-Icon.webp' %}">JavaScript / React</span></p>
+          <p><span><img class="about-page-icon" src="{% static 'blog/media/html_logo.webp' %}">HTML/CSS</span></p>
+          <p><span><img class="about-page-icon" src="{% static 'blog/media/Java-Icon.webp' %}">Java</span></p>
+          <p><span><img class="about-page-icon" src="{% static 'blog/media/Sql_data_base_with_logo.webp' %}">SQL</span></p>
+          <p><span><img class="about-page-icon" src="{% static 'blog/media/Microsoft_Azure.webp' %}">Microsoft Azure</span></p>
+          <p><span style="width: 70%;"><img class="about-page-icon" src="{% static 'blog/media/Linux_logo.webp' %}">Linux</span></p>
+        </div>
+      </div>
+
+      <div style="margin-top: 200px;">
+        <h3>Python Stack </h3>
+      </div>
+        
+        <div style="margin-top: 25px;">
+          <div class="about-page-text text-muted">
+            <p><span><img class="about-page-icon" src="{% static 'blog/media/Django-Icon.webp' %}">Django</span></p>
+            <p><span><img class="about-page-icon" src="{% static 'blog/media/pyqt_logo.webp' %}">PyQT</span></p>
+            <p><span><img class="about-page-icon" src="{% static 'blog/media/kivy_logo.webp' %}">Kivy</span></p>
+            <p><span><img class="about-page-icon" src="{% static 'blog/media/rest-logo.webp' %}">REST framework</span></p>
+            <p><span><img class="about-page-icon" src="{% static 'blog/media/numpy-1.webp' %}">Numpy</span></p>
+            <p><span><img class="about-page-icon" src="{% static 'blog/media/nltklibrary.webp' %}">NLTK</span></p>
+            <p><span><img class="about-page-icon" src="{% static 'blog/media/TensorFlow_logo.webp' %}">TensorFlow</span></p>
+            <p><span style="width: 70%;"><img class="about-page-icon" src="{% static 'blog/media/Keras_logo.webp' %}">Keras</span></p>   
+            <p><span style="width: 70%;"><img class="about-page-icon" src="{% static 'blog/media/PyCharm_Icon.webp' %}">PyCharm</span></p> 
+            <p><span><img class="about-page-icon" style="width: 12px;" src="{% static 'blog/media/449px-Pandas_mark.webp' %}">Pandas</span></p> 
+            <p><span><img class="about-page-icon" src="{% static 'blog/media/Selenium_Logo.webp' %}">Selenium</span></p>      
+  
+          </div>
+        </div>
+      
+      <div style="margin-top: 200px;">
+      <h3>Other Skills </h3>
+    </div>
+      
+      <div style="margin-top: 25px;">
+        <div class="about-page-text text-muted"> 
+          <p><span><img class="about-page-icon" src="{% static 'blog/media/Cplusicon.webp' %}">C++</span></p> 
+          <p><span><img class="about-page-icon" src="{% static 'blog/media/Git_icon.webp' %}">Git</span></p> 
+          <p><span style="width: 70%;"><img class="about-page-icon" src="{% static 'blog/media/Android_robot.webp' %}">Android</span></p>
+          <p><span><img class="about-page-icon" src="{% static 'blog/media/Rlogo.webp' %}">R</span></p>
+          <p><span><img class="about-page-icon" src="{% static 'blog/media/Power_BI_Logo.webp' %}">MS Power BI</span></p>
+          <p><span><img class="about-page-icon" src="{% static 'blog/media/LaTeX_logo.webp' %}">LaTeX</span></p>           
+        </div>
+      </div>
+
+
+      <div class="button-contact-container" >
+        <a href="{% url 'contact' %}">
+          <button class="btn btn-outline-info" style="margin-top: 35px;">Contact</button>
+        </a>
+      </div>   
+  
+    </main>
+{% endblock content %}
