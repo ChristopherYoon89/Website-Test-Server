@@ -1,32 +1,33 @@
+from typing import Any
 from django.shortcuts import (
 	render, 
 	redirect,
-  get_object_or_404,
+    get_object_or_404,
 )
 from django.urls import reverse_lazy
 from .models import (
 	Post, 
-  Solution,
+    Solution,
 	ReleaseNotes, 
 	JobPost,
-  NewsletterRequest,
-  Resource,
+    NewsletterRequest,
+    Resource,
 )
 from django.views.generic import (
 	TemplateView, 
 	DetailView,
 	ListView,
-  FormView,
+    FormView,
 )
 from django.contrib import messages
 from .forms import (
 	ContactForm, 
 	NewsletterForm,
-  NewsletterUnsubscribeForm,
-  JobApplicationForm,
+    NewsletterUnsubscribeForm,
+    JobApplicationForm,
 )
 from django.contrib.messages.views import SuccessMessageMixin
-from typing import Any
+#from django.core.mail import EmailMessage
 
 
 
