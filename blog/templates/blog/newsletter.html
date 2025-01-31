@@ -1,0 +1,28 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+
+
+<h1>Newsletter</h1>
+<hr>
+
+<form method="POST" enctype="multipart/form-data" style="margin-top:35px;">
+	{% csrf_token %}
+	<fieldset class="form-group text-muted small">
+		{{ n_form|crispy }}
+		<div>
+			* required fields
+		</div>
+	</fieldset>  
+	<div class="form-group" style="margin-top:25px;">
+		<button class="btn btn-outline-info" style="width:100px; " type="submit">Sign up</button>
+	</div>
+</form>
+
+<div class="text-muted small" style="margin-top: 55px; text-decoration: underline;">
+<a href="{% url 'resources-page' %}">Download latest newsletters</a>
+</div>
+	
+
+{% endblock content %}

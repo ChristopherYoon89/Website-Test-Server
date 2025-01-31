@@ -1,0 +1,32 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top nav-font">
+	<div class="container">
+	  <a class="navbar-brand mr-4" href="{% url 'blog-home' %}"><span class="menu-name-chris">CHRIS YOON DEVELOPING</span></a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation" style="margin-right:10px;">
+	  <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarToggle">
+		  <div class="navbar-nav mr-auto">
+		  </div>
+		  <ul class="navbar-nav ml-auto">
+			<li><a class="nav-item nav-link" href="{% url 'blog-home' %}">Home</a></li>
+			<li><a class="nav-item nav-link" href="{% url 'release-notes-page' %}">Release Notes</a></li>
+			<li><a class="nav-item nav-link" href="{% url 'solutions-page' %}">Solutions</a></li>
+			<li><a class="nav-item nav-link" href="{% url 'blog-posts-page' %}">Blog</a></li>
+			<li><a class="nav-item nav-link" href="{% url 'about-page' %}">About</a></li>
+			
+			<li class="nav-item dropdown">
+			  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
+				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<img class="menu-flag-en-icon" src="{% static 'blog/media/Flag_USA.png' %}" alt="English">
+			  </a>
+			  <div class="dropdown-menu" aria-labelledby="navbarDropdown">        
+				<a class="dropdown-item" href="{% url 'blog-home-ger' %}"><img class="menu-flag-de-icon-dropdown" src="{% static 'blog/media/Flag_Germany.png' %}" alt="English">de</a>
+			  </div>
+			</li>
+
+		  </ul>
+	  </div>
+	</div>
+</nav>

@@ -1,0 +1,194 @@
+{% extends "blog/base.html" %}
+{% block content %}
+
+<h1>Welcome!</h1>
+<div class="home-page-subtitle">
+  <h1 style="font-weight: normal; font-size: 12pt;">Software Engineering & Data Science</h1>
+</div>
+
+<hr>
+<div class="row">
+  <ul class="list-unstyled">
+    <li class="media">
+      <div class="image-solutions">
+      <p>{% load static %}<img class="mr-3" src="{% static 'blog/media/clipdisplay.png' %}" alt="Fullstack development"></p>
+      </div>
+      <div class="media-body">
+        <h2 class="mt-0 mb-1" style="font-size:15pt;">Full-Stack Development</h2>
+        <p>
+        Fullstack developing is exciting in many ways, one of which is that it allows me to 
+        build holistic systems from the scratch and integrate different technologies.
+        I usually start from first principles and plan the system's structure, recognizing that 
+        a well-organized foundation is a precondition for integrating functionality and thoughtful 
+        designs. Fullstack developing includes web applications, desktop software, mobile apps or 
+        industrial software.
+        </p>
+        <p>
+          <details>
+            <summary>Read More</summary>
+            <ul class="list-group">
+              <li class="list-group-item list-group-item-light" onclick="location.href='{% url 'solution-detail' slug='web-development' %}';">Web applications</li>
+              <li class="list-group-item list-group-item-light" onclick="location.href='{% url 'solution-detail' slug='desktop-software' %}';">Desktop software</li>
+              <li class="list-group-item list-group-item-light" onclick="location.href='{% url 'solution-detail' slug='mobile-applications' %}';">Mobile apps</li>
+            </ul>
+          </details>
+        </p>
+      </div>
+    </li>
+
+    <li class="media my-4">
+      <div class="image-solutions">
+          <p>{% load static %}
+            <img class="mr-3" src="{% static "blog/media/robotfreeze.png" %}" alt="Data systems and ai"> 
+          </p>
+      </div> 
+      <div class="media-body">
+        <h2 class="mt-0 mb-1" style="font-size:15pt;">Data Systems and AI </h2>
+        <p>
+        In today's world data has become an integral part of most digital technologies, products and business 
+        processes. With data gaining in importance businesses increasingly rely on systems such as artificial intelligence, 
+        databases, APIs, ETL-pipelines, big data analysis, model simulation or visualizations. In the past I built 
+        prediction algorithms for the finance industry, data integrations for marketing businesses or 
+        manufacturing systems, crawling bots, recommendation and classification systems or LLMs.
+        </p>
+        <p>
+          <details>
+            <summary>Read More</summary>
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-light" onclick="location.href='{% url 'solution-detail' slug='data-systems-and-artificial-intelligence' %}';">Data systems and AI</li>
+              </ul>
+          </details>
+        </p>
+      </div>
+    </li>
+
+    <li class="media my-4">
+      <div class="image-solutions">
+          <p>{% load static %}
+              <img class="mr-3" src="{% static "blog/media/coolrobot.png" %}" alt="Industrial software"> </p>
+      </div>
+      <div class="media-body">
+        <h2 class="mt-0 mb-1" style="font-size:15pt;">Industrial Software</h2>
+        <p>
+        Industrial software often involves automating and scaling manufacturing processes and the integration and interoperability of data streams.
+        Industrial software is generally used in manufacturing systems, but today they are built for all kinds of industries, including 
+        logistics and transportation, accounting, banking, insurance or marketing. One of the exciting things about it is not only to automate 
+        data streams and business processes, but also to make them more intelligent by implementing AI algorithms.
+        </p>
+        <p>
+          <details>
+            <summary>Read More</summary>
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-light" onclick="location.href='{% url 'solution-detail' slug='industrial-software-and-automation' %}';">Industrial software</li>
+              </ul>
+          </details>
+        </p>
+      </div>
+    </li>
+
+  </ul>
+</div>
+
+
+<div class="button-contact-container">
+<a href="{% url 'contact' %}">
+  <button class="btn btn-outline-info">Contact</button>
+</a>
+</div>
+
+
+<h2 style="margin-top: 100px;">Release Notes</h2>
+<hr>
+<div class="row" style="padding-left:15px; padding-right:15px;">
+  {% for post in release_notes %}
+    <div>
+      <article style="margin-top: 15px;">
+        <div>
+          <h4><a href="{% url 'release-note-detail' post.slug %}">{{ post.title }}</a></h4>
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ post.author }}</a>
+              <small class="text-muted">{{ post.date_posted | date:"F j, Y" }}</small>
+            </div>
+            <p>{{ post.snippet | safe }}</p>
+        </div>
+    </div>
+    <hr>
+    </article> 
+  {% endfor %}
+</div> 
+
+
+<div class="button-contact-container">
+  <a href="{% url 'release-notes-page' %}">
+    <button class="btn btn-outline-info">Read more</button>
+  </a>
+</div>
+
+
+<h2>My Stack</h2>
+<hr>
+<div style="margin-top: 25px;">
+  <div class="about-page-text text-muted">
+    <p><span><img class="about-page-icon" src="{% static 'blog/media/Python_logo.webp' %}">Python</span></p>
+    <p><span><img class="about-page-icon" src="{% static 'blog/media/Django-Icon.webp' %}">Django</span></p>
+    <p><span><img class="about-page-icon" src="{% static 'blog/media/JavaScript-Icon.webp' %}">JavaScript / React</span></p>
+    <p><span><img class="about-page-icon" src="{% static 'blog/media/Java-Icon.webp' %}">Java</span></p>
+    <p><span><img class="about-page-icon" src="{% static 'blog/media/Sql_data_base_with_logo.webp' %}">SQL</span></p>
+    <p><span><img class="about-page-icon" src="{% static 'blog/media/Microsoft_Azure.webp' %}">Microsoft Azure</span></p>
+    <p><span style="width: 70%;"><img class="about-page-icon" src="{% static 'blog/media/Linux_logo.webp' %}">Linux</span></p>
+  </div>
+</div>
+
+
+<div class="button-contact-container">
+  <a href="{% url 'about-page' %}">
+    <button class="btn btn-outline-info">Read more</button>
+  </a>
+</div>
+
+
+<h2 style="margin-top: 120px;">Blog</h2>
+<hr>
+<div class="row" style="padding-left:15px; padding-right:15px;">
+  {% for post in posts %}
+  <div>
+    <article style="margin-top: 15px;">
+      <div>
+        <h4><a href="{% url 'blog-detail' post.slug %}">{{ post.title }}</a></h4>
+          <div class="article-metadata">
+            <a class="mr-2" href="#">{{ post.author }}</a>
+            <small class="text-muted">{{ post.date_posted | date:"F j, Y" }}</small>
+          </div>
+          <p>{{ post.snippet | safe }}</p>
+        </div>
+      </div>
+      <hr>
+    </article>
+  {% endfor %}
+</div> 
+
+
+<div class="button-contact-container">
+  <a href="{% url 'blog-posts-page' %}">
+    <button class="btn btn-outline-info">Read more</button>
+  </a>
+</div>
+
+
+<h2 style="margin-top: 120px;">Solutions</h2>
+<hr>
+<div class="about-page-text text-muted">
+    <p><span><img class="about-page-icon" src="{% static 'blog/media/css.png' %}"><a href="{% url 'solution-detail' slug='web-development' %}">Web development</a></span></p>  
+    <p><span><img class="about-page-icon" src="{% static 'blog/media/imac.png' %}"><a href="{% url 'solution-detail' slug='desktop-software' %}">Desktop software</a></span></p>
+    <p><span><img class="about-page-icon" src="{% static 'blog/media/phoneapps.png' %}"><a href="{% url 'solution-detail' slug='mobile-applications' %}">Mobile apps</a></span></p>
+    <p><span><img class="about-page-icon" src="{% static 'blog/media/robotfreeze.png' %}"><a href="{% url 'solution-detail' slug='data-systems-and-artificial-intelligence' %}">Data systems and AI</a></span></p>
+    <p><span><img class="about-page-icon" src="{% static 'blog/media/coolrobot.png' %}"><a href="{% url 'solution-detail' slug='industrial-software-and-automation' %}">Industrial software & automation</a></span></p>
+</div>
+
+
+<div class="button-contact-container">
+  <a href="{% url 'contact' %}">
+    <button class="btn btn-outline-info">Contact</button>
+  </a>
+</div>
+{% endblock content %}

@@ -1,0 +1,30 @@
+{% extends "blog/base.html" %} 
+{% block content %}
+
+    <h1>Imprint</h1>
+    <hr>
+
+    <main role="main" class="container" style="padding: 0;">
+        <div style="margin-top: 45px;">
+          <h3>Keasbey Company LLC</h3>
+          <ul style="list-style-type: none; margin: 0; padding: 0;">
+            <li>Yardanskij Put BB</li>
+            <li>85311 Budva</li>
+            <li>Montenegro</li>
+            <li>Tax no.: 17031989</li>
+          </ul>
+        </div>
+
+
+      <div style="margin-top: 35px;">
+        © Copyright, all rights reserved
+      </div>
+
+      <div class="button-contact-container">
+        <a href="{% url 'contact' %}">
+          <button class="btn btn-outline-info">Contact</button>
+        </a>
+        </div>
+    </main>
+
+{% endblock content %}

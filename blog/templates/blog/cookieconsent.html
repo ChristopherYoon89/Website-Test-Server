@@ -1,0 +1,62 @@
+<!-- templates/cookie_consent.html -->
+{% load static %}
+<head>
+  <style>
+
+    .cookie-text {
+      position: fixed; 
+      bottom: 0; 
+      width: 100%; 
+      background-color: #333; 
+      color: rgb(236, 236, 236); 
+      padding: 15px; 
+      text-align: center;
+    }
+
+    .policy-link {
+      text-decoration: underline;
+    }
+
+
+    .newsletter-line {
+      border-color: #868686;
+      width: 50%;
+    }
+
+
+    .newsletter-container {
+      margin-bottom: 25px;
+      margin-top: 20px;
+    }
+
+    .newsletter-icon {
+      width: 25px;
+    }
+
+  </style>
+</head>
+
+{% if not request.COOKIES.accepted_cookies or request.COOKIES.accepted_cookies != 'true' %}
+<div class="cookie-text">
+
+  <div class="newsletter-container">
+    <img class="newsletter-icon" src="{% static 'blog/media/product-page-icon1.png' %}">
+    <a href="{% url 'newsletter-page' %}"><u>Subscribe to our weekly tech newsletter</u></a> - no spam, just high-signal content!
+  </div>
+
+  <hr class="newsletter-line">
+
+  <p style="margin-top: 25px;">This website uses cookies to improve your experience. By continuing to use the 
+    website, you accept our <a href="{% url 'terms-page' %}"><span class="policy-link">terms of use</span></a> and <a href="{% url 'privacy-page' %}"><span class="policy-link">cookie policy</span></a>.</p>
+  
+    <form action="{% url 'accept-cookies' %}" method="post" style="display: inline-block; margin-right: 10px;">
+    {% csrf_token %}
+    <button type="submit" name="accept_cookies" value="true" class="btn btn-outline-info">Accept</button>
+    </form>
+    
+    <form action="{% url 'reject-cookies' %}" method="post" style="display: inline-block;">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-outline-danger" name="reject_cookies" value="true">Reject</button>
+    </form>
+</div>
+{% endif %}

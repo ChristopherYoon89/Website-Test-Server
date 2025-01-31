@@ -1,0 +1,247 @@
+{% extends "blog/baseproductpage.html" %}
+{% load static %} 
+{% block content %}  
+
+<h1>Keasbey App</h1>
+Next-Level Digital Marketing and SEO Analysis
+<hr>
+
+<video autoplay loop muted plays-inline class="keasbey-video">
+<source src="{% static 'blog/media/Product-video.webm' %}" type="video/webm">
+</video>
+
+<div class="button-contact-container">
+<a href="{% url 'newsletter-page' %}">
+<button class="btn btn-outline-info">Sign Up</button>
+</a>
+</div>
+
+<hr>
+<div class="row" style="padding-left:15px; padding-right:15px;">
+  <div>
+    <article style="margin-top: 15px;">
+      <div>
+        <h4>Save the date: Keasbey Company announces official release date!</h4>
+          <div class="article-metadata">
+            <a class="mr-2" href="#">Keasbey Company</a>
+            <small class="text-muted">14 December 2024</small>
+          </div>
+          <p>
+            <div>
+            Today, we announce the release date of a demo version of our latest project, the 
+            <code>Keasbey App</code> — a browser-based marketing application. This app is a culmination of various 
+            programs we've developed for clients over the years, now integrated into a single 
+            tool for digital marketing professionals. With features that cover project and 
+            campaign management, SEO and keyword analysis, data crawling, and AI-driven 
+            generative tasks, the <code>Keasbey App</code> is designed to meet a wide range of digital 
+            marketing needs.
+            </div>
+
+            <div style="margin-top: 15px;">
+            The demo version will be live on 10 January 2025 and free to use! Please bear in mind that the 
+            demo offers only a glimpse of the app's capabilities, and the official release is 
+            expected to have significantly expanded functionality. For the full version I have 
+            to put a small price on the app because complex processes and powerful AI 
+            technologies require stronger hardware and bandwidth resources, which cost money 
+            and need to be maintained.
+            </div>
+
+            <div style="margin-top: 15px;">
+            You can now <a href="{% static 'newsletter-page' %}"><u>sign up</u></a> for our new weekly newsletter 
+            and get informed about the release as soon as the <code>Keasbey App</code> is live.
+            </div>
+            
+            <h4 style="margin-top: 35px;">What can you expect?</h4>
+            <div class="row" style="margin-top: 25px;">
+            <div class="col-md-6">
+              <ul style="list-style: none; font-size: 12pt; list-style-type: '\2713'; margin-left: 15px;">
+                <li><span style="margin-left: 15px;">Optimize your website's ranking on search engines</span></li>
+                <li><span style="margin-left: 15px;">Deploy crawling bots to extract data from the web</span>  </li>
+                <li><span style="margin-left: 15px;">Audit your website and its user experience</span></li>
+                <li><span style="margin-left: 15px;">Manage your campaigns using a project manager</span></li>
+              </ul>
+            </div>
+            
+            <div class="col-md-6">
+              <ul style="list-style: none; font-size: 12pt; list-style-type: '\2713'; margin-left: 15px;">
+                <li><span style="margin-left: 15px;">Manage your activities using a task manager</span></li>
+                <li><span style="margin-left: 15px;">Track and analyze the performance of your marketing campaigns</span></li>
+                <li><span style="margin-left: 15px;">Create and automate your marketing reports</span></li>
+                <li><span style="margin-left: 15px;">Use cutting edge technology to analyze your industry</span></li>
+              </ul>
+            </div>
+            </div>
+          </p>
+      </div>
+  </div>
+  </article> 
+</div> 
+
+
+<div class="product-page-container">    
+  <div class="row" id="product-page-row">
+    <div class="col-xl-3 col-md-6">
+      <div class="product-page-description-container">
+        <p><img src="{% static 'blog/media/product-page-icon6.png' %}" class="product-page-icon"></p>
+        <p class="product-page_description-header">Online Marketing Tools</p>
+        <p class="product-page-description-text">
+        The app provides a variety of different online marketing tools, ranging from 
+        search engine optimization to data crawlers.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+      <div class="product-page-description-container">
+        <p><img src="{% static 'blog/media/product-page-icon15.png' %}" class="product-page-icon"></p>
+
+        <p class="product-page_description-header">SEO</p>
+
+        <p class="product-page-description-text">
+        Use different tools to make your website SEO friendly and gain a higher ranking 
+        in search engine results. 
+        </p>
+      </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+      <div class="product-page-description-container">
+        <p><img src="{% static 'blog/media/product-page-icon16.png' %}" class="product-page-icon"></p>
+
+        <p class="product-page_description-header">Data Crawler</p>
+
+        <p class="product-page-description-text">
+        Deploy crawling bots to extract different kinds of data from website, including 
+        keywords, contact details, tables, files, etc. 
+        </p>
+      </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+      <div class="product-page-description-container">
+        <p><img src="{% static 'blog/media/product-page-icon17.png' %}" class="product-page-icon"></p>
+
+        <p class="product-page_description-header">Website Audit</p>
+
+        <p class="product-page-description-text">
+        Use auditing tools to optimize your website and the user experience, such as 
+        code analysis, security tests, mobile tests or accessibility.
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row" id="product-page-row2">
+    <div class="col-xl-3 col-md-6">
+      <div class="product-page-description-container">
+        <p><img src="{% static 'blog/media/product-page-icon9.png' %}" class="product-page-icon"></p>
+
+        <p class="product-page_description-header">Project Manager</p>
+
+        <p class="product-page-description-text">
+        Manage and organize your marketing campaigns using the project manager, including 
+        adding, editing or deleting projects. 
+        </p>
+      </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+      <div class="product-page-description-container">
+        <p><img src="{% static 'blog/media/product-page-icon18.png' %}" class="product-page-icon"></p>
+
+        <p class="product-page_description-header">Task Manager</p>
+
+        <p class="product-page-description-text">
+          Keep track of your tasks, update their status and assign them to projects. 
+        </p>
+      </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+      <div class="product-page-description-container">
+        <p><img src="{% static 'blog/media/product-page-icon19.png' %}" class="product-page-icon"></p>
+
+        <p class="product-page_description-header">Social Media Manager</p>
+
+        <p class="product-page-description-text">
+            Manage, optimize and track your social media profiles.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+      <div class="product-page-description-container">
+        <p><img src="{% static 'blog/media/product-page-icon7.png' %}" class="product-page-icon"></p>
+
+        <p class="product-page_description-header">Dashboard</p>
+
+        <p class="product-page-description-text">
+        Use and customize your dashboard to manage and track your marketing campaigns and tools.                 
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="row" id="product-page-row3">
+    <div class="col-xl-3 col-md-6">
+      <div class="product-page-description-container">
+        <p><img src="{% static 'blog/media/product-page-icon11.png' %}" class="product-page-icon"></p>
+
+        <p class="product-page_description-header">Analytics</p>
+
+        <p class="product-page-description-text">
+        Use analysis and visualization tools to track the performance of your marketing 
+        campaigns and activities.                  
+        </p>
+      </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+      <div class="product-page-description-container">
+        <p><img src="{% static 'blog/media/product-page-icon20.png' %}" class="product-page-icon"></p>
+
+        <p class="product-page_description-header">Automate Reporting</p>
+
+        <p class="product-page-description-text">
+        Create and automate reports of your marketing projects and activities.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+      <div class="product-page-description-container">
+        <p><img src="{% static 'blog/media/product-page-icon21.png' %}" class="product-page-icon"></p>
+
+        <p class="product-page_description-header">Export Data</p>
+
+        <p class="product-page-description-text">
+        Export the data generated by marketing and crawling tools as csv or excel files.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+      <div class="product-page-description-container">
+        <p><img src="{% static 'blog/media/product-page-icon14.png' %}" class="product-page-icon"></p>
+
+        <p class="product-page_description-header">Free Access</p>
+
+        <p class="product-page-description-text">
+        The app has not been commercialized yet. So most functionalities of the 
+        tool can be accessed for free.
+        </p>
+      </div>
+    </div> 
+</div>
+</div>
+
+<div class="button-contact-container">
+<a href="{% url 'newsletter-page' %}">
+<button class="btn btn-outline-info">Sign Up</button>
+</a>
+</div>
+
+{% endblock content %}

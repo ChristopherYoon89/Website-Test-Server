@@ -1,0 +1,35 @@
+{% extends "blog/base.html" %}
+{% load static %} 
+{% block content %}  
+
+<div class="row">
+  <article class="media content-section" style="background-color: #eff5fb;">
+    <div class="media-body">
+      <span class="backlink" style="font-size: 10pt;" onClick="window.history.back();return false;"><- Back</span> 
+      
+      <h2 style="margin-top: 25px;"> {{ post.title }}</h2>
+
+      <hr>
+      <p class="article-content">{{ post.content | safe }}</p>
+    </div>
+  </article>
+
+  <div class="media content-section" style="background-color: #eff5fb;">
+    <div class="media-body">
+      <div class="body-further-reading">
+        <p><h3>New Releases</h3></p>
+        <hr>
+      </div>
+      {% for post in all_release_notes %}
+        <article class="media-body">      
+          <h5><a class="article-title" href="{% url 'release-note-detail' post.slug %}">{{ post.title }}</a></h5>
+            <div class="article-metadata">            
+              <a><small class="text-muted">{{ post.date_posted | date:"F j, Y" }} </small></a>
+            </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>    
+</div>
+
+{% endblock content %}
