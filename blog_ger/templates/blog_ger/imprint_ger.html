@@ -1,0 +1,30 @@
+{% extends "blog_ger/base_ger.html" %} 
+{% block content %}
+
+    <h1>Impressum</h1>
+    <hr>
+
+    <main role="main" class="container" style="padding: 0;">
+        <div style="margin-top: 45px;">
+          <h3>Keasbey Company LLC</h3>
+          <ul style="list-style-type: none; margin: 0; padding: 0;">
+            <li>Yardanskij Put BB</li>
+            <li>85311 Budva</li>
+            <li>Montenegro</li>
+            <li>Steuernummer: 17031989</li>
+          </ul>
+        </div>
+
+
+      <div style="margin-top: 35px;">
+        © Copyright, alle Rechte vorbehalten
+      </div>
+
+      <div class="button-contact-container" style="margin-bottom: 350px;">
+        <a href="{% url 'contact-page-ger' %}">
+        <button class="btn btn-outline-info" type="submit">Anfrage senden</button>
+      </a>
+      </div>
+    </main>
+
+{% endblock content %}

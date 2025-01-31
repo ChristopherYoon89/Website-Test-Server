@@ -1,0 +1,21 @@
+{% extends "blog_ger/base_ger.html" %}
+{% load static %}
+{% block content %}
+
+<div class="row">
+  <article class="media content-section" style="background-color: #eff5fb;">
+    <div class="media-body">
+      <span class="backlink" style="font-size: 10pt;" onClick="window.history.back();return false;"><- Zurück</span> 
+      <h2 style="margin-top: 25px;">{{ resource.name }}</h2>
+        <div class="article-metadata">
+            <small class="text-muted">{{ resource.uploaded_on | date:"F j, Y" }}</small>
+        </div>
+        <hr>
+      <p class="article-content">{{ resource.description }}</p>
+    </div>
+  </article>
+  <p>
+    <a class="resources-download-button" href="{{ resource.file.url }}" download>Download</a>
+  </p>
+</div>
+{% endblock content %}

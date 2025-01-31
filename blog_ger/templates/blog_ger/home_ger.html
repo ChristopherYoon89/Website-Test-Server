@@ -1,0 +1,199 @@
+{% extends "blog_ger/base_ger.html" %}
+{% block content %}
+
+<h1>Willkommen!</h1>
+<div class="home-page-subtitle">
+<h1 style="font-weight: normal; font-size: 12pt;">Software Entwicklung & Data Science</h1>
+</div>
+
+<hr>
+<div class="row">
+  <ul class="list-unstyled">
+    <li class="media">
+      <div class="image-solutions">
+      <p>{% load static %}<img class="mr-3" src="{% static 'blog/media/clipdisplay.png' %}" alt="Fullstack development"></p>
+      </div>
+      <div class="media-body">
+        <h2 class="mt-0 mb-1" style="font-size:15pt;">Full-Stack Entwicklung</h2>
+        <p>
+        Fullstack-Entwicklung ist in vielerlei Hinsicht spannend, da man dabei
+        holistische Systeme von Grund auf entwickelt und verschiedene Technologien 
+        integriert. In der Regel beginne ich mit einer Reihe an <i>First Principles</i>
+        und plane die Struktur des Systems, da eine gut organisierte Grundlage 
+        die Voraussetzung für die Integration von Funktionalität und bedachten Designs ist. 
+        Fullstack-Entwicklung umfasst Webanwendungen, Desktop-Software, Mobile Apps oder 
+        Industrie-Software.
+        </p>
+        <p>
+          <details>
+            <summary>Mehr lesen</summary>
+            <ul class="list-group">
+              <li class="list-group-item list-group-item-light" onclick="location.href='{% url 'solution-detail-ger' slug='web-entwicklung' %}';">Web Applikationen</li>
+              <li class="list-group-item list-group-item-light" onclick="location.href='{% url 'solution-detail-ger' slug='desktop-software' %}';">Desktop Software</li>
+              <li class="list-group-item list-group-item-light" onclick="location.href='{% url 'solution-detail-ger' slug='mobile-apps' %}';">Mobile Apps</li>
+            </ul>
+          </details>
+        </p> 
+      </div>
+    </li>
+
+    <li class="media my-4">
+      <div class="image-solutions">
+          <p>{% load static %}
+              <img class="mr-3" src="{% static "blog/media/robotfreeze.png" %}" alt="Data systems and ai"> </p>
+      </div> 
+      <div class="media-body">
+        <h2 class="mt-0 mb-1" style="font-size:15pt;">Datensysteme und KI </h2>
+        <p>
+        In der heutigen Welt sind Daten ein integraler Bestandteil der meisten digitalen 
+        Technologien, Produkte und Geschäftsprozesse. Mit der zunehmenden Bedeutung von 
+        Daten sind Unternehmen immer stärker auf Systeme und Technologien angewiesen, wie 
+        Künstliche Intelligenz, Datenbanken, APIs, ETL-Prozesse, Big-Data-Analysen, 
+        Simulationen oder Visualisierungen. Im Rahmen ehemaliger Projekte entwickelte ich 
+        Algorithmen für die Finanzbranche, Datenintegrationen für Marketingunternehmen oder 
+        Fertigungssysteme, Crawling-Bots, Recommendation-Systeme, Klassifikationsalgorithmen 
+        oder LLMs.
+        </p>
+        <p>
+          <details>
+            <summary>Mehr lesen</summary>
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-light" onclick="location.href='{% url 'solution-detail-ger' slug='datensysteme-und-kuenstliche-intelligenz' %}';">Datensysteme und KI</li>
+              </ul>
+          </details>
+        </p>
+      </div>
+    </li>
+
+    <li class="media my-4">
+      <div class="image-solutions">
+          <p>{% load static %}
+            <img class="mr-3" src="{% static "blog/media/coolrobot.png" %}" alt="Industrial software"> 
+          </p>
+      </div>
+      <div class="media-body">
+        <h2 class="mt-0 mb-1" style="font-size:15pt;">Industrie Software</h2>
+        <p>
+        Industrie-Software umfasst in der Regel die Automatisierung und Skalierung von Industrie-Prozessen sowie 
+        die Integration und Interoperabilität von Datenströmen. Industrie-Software wird zwar meist in 
+        Fertigungssystemen eingesetzt, allerdings wird sie heute auch für andere Branchen entwickelt, 
+        darunter Logistik und Transport, Buchhaltung, Banken, Versicherungen oder Marketing. Besonders 
+        spannend daran ist nicht nur die Automatisierung von Datenströmen und Geschäftsprozessen, 
+        sondern auch deren Optimierung durch Künstliche Intelligenz.
+        </p>
+        <p>
+          <details>
+            <summary>Mehr lesen</summary>
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-light" onclick="location.href='{% url 'solution-detail-ger' slug='industrie-software-und-automatisierung' %}';">Industrie Software</li>
+              </ul>
+          </details>
+        </p>
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+<div class="button-contact-container">
+<a href="{% url 'contact-page-ger' %}">
+  <button class="btn btn-outline-info">Anfrage senden</button>
+</a>
+</div>
+
+
+<h2 style="margin-top: 100px;">Release Notes</h2>
+<hr>
+<div class="row" style="padding-left:15px; padding-right:15px;">
+  {% for post in release_notes %}
+    <div>
+      <article style="margin-top: 15px;">
+        <div>
+          <h4><a href="{% url 'release-note-detail-ger' post.slug %}">{{ post.title }}</a></h4>
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ post.author }}</a>
+              <small class="text-muted">{{ post.date_posted | date:"F j, Y" }}</small>
+            </div>
+            <p>{{ post.snippet | safe }}</p>
+        </div>
+    </div>
+    <hr>
+    </article> 
+  {% endfor %}
+</div> 
+
+
+<div class="button-contact-container">
+  <a href="{% url 'release-notes-page-ger' %}">
+    <button class="btn btn-outline-info">Mehr lesen</button>
+  </a>
+</div>
+
+
+<h2>Mein Stack</h2>
+<hr>
+<div style="margin-top: 25px;">
+  <div class="about-page-text text-muted">
+    <p><span><img class="about-page-icon" src="{% static 'blog/media/Python_logo.webp' %}">Python</span></p>
+    <p><span><img class="about-page-icon" src="{% static 'blog/media/Django-Icon.webp' %}">Django</span></p>
+    <p><span><img class="about-page-icon" src="{% static 'blog/media/JavaScript-Icon.webp' %}">JavaScript / React</span></p>
+    <p><span><img class="about-page-icon" src="{% static 'blog/media/Java-Icon.webp' %}">Java</span></p>
+    <p><span><img class="about-page-icon" src="{% static 'blog/media/Sql_data_base_with_logo.webp' %}">SQL</span></p>
+    <p><span><img class="about-page-icon" src="{% static 'blog/media/Microsoft_Azure.webp' %}">Microsoft Azure</span></p>
+    <p><span style="width: 70%;"><img class="about-page-icon" src="{% static 'blog/media/Linux_logo.webp' %}">Linux</span></p>
+  </div>
+</div>
+
+
+<div class="button-contact-container">
+  <a href="{% url 'about-page' %}">
+    <button class="btn btn-outline-info">Mehr lesen</button>
+  </a>
+</div>
+
+
+<h2 style="margin-top: 120px;">Blog</h2>
+<hr>
+<div class="row" style="padding-left:15px; padding-right:15px;">
+  {% for post in posts %}
+  <div>
+    <article style="margin-top: 15px;">
+      <div>
+        <h4><a href="{% url 'blog-detail-ger' post.slug %}">{{ post.title }}</a></h4>
+          <div class="article-metadata">
+            <a class="mr-2" href="#">{{ post.author }}</a>
+            <small class="text-muted">{{ post.date_posted | date:"F j, Y" }}</small>
+          </div>
+          <p>{{ post.snippet | safe }}</p>
+        </div>
+      </div>
+      <hr>
+    </article>
+  {% endfor %}
+</div> 
+
+<div class="button-contact-container">
+  <a href="{% url 'blog-posts-page' %}">
+    <button class="btn btn-outline-info">Mehr lesen</button>
+  </a>
+</div>
+
+
+
+<h2 style="margin-top: 120px;">Lösungen</h2>
+<hr>
+
+<div class="about-page-text text-muted">
+    <p><span><img class="about-page-icon" src="{% static 'blog/media/css.png' %}"><a href="{% url 'solution-detail-ger' slug='web-entwicklung' %}">Web Entwicklung</a></span></p>  
+    <p><span><img class="about-page-icon" src="{% static 'blog/media/imac.png' %}"><a href="{% url 'solution-detail-ger' slug='desktop-software' %}">Desktop Software</a></span></p>
+    <p><span><img class="about-page-icon" src="{% static 'blog/media/phoneapps.png' %}"><a href="{% url 'solution-detail-ger' slug='mobile-apps' %}">Mobile Apps</a></span></p>
+    <p><span><img class="about-page-icon" src="{% static 'blog/media/macpro.png' %}"><a href="{% url 'solution-detail-ger' slug='datensysteme-und-kuenstliche-intelligenz' %}">Datensysteme & KI</a></span></p>
+    <p><span><img class="about-page-icon" src="{% static 'blog/media/coolrobot.png' %}"><a href="{% url 'solution-detail-ger' slug='industrie-software-und-automatisierung' %}">Industrie Software & Automatisierung</a></span></p>
+</div>
+
+<div class="button-contact-container">
+  <a href="{% url 'contact-page-ger' %}">
+    <button class="btn btn-outline-info">Anfrage senden</button>
+  </a>
+</div>
+{% endblock content %}

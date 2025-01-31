@@ -1,0 +1,39 @@
+{% extends "blog_ger/base_ger.html" %}
+{% block content %}
+
+<h1>Jobs</h1>
+<hr>
+<div class="row" style="padding-left:15px; padding-right:15px;">
+  {% for post in jobposts %}
+    <div>
+      <article style="margin-top: 15px;">
+        <div>
+          <h4>{{ post.title }}</h4>
+            <div class="article-metadata">
+              <small class="text-muted">Veröffentlicht am: {{ post.date_posted | date:"F j, Y" }} </small>
+            </div>
+
+            <ul class="job-post-list">
+              <li><span class="job-post-label">Vergütung</span></li>
+              <li>{{ post.salary }}</li>
+              <li style="margin-top: 15px;"><span class="job-post-label">Dauer</span></li>
+              <li>{{ post.duration }}</li>
+              <li style="margin-top: 15px"><span class="job-post-label">Ort</span></li>
+              <li>{{ post.location }}</li>
+              <li style="margin-top: 15px;"><span class="job-post-label">Beschreibung</span> {{ post.job_description | safe}}</li>
+              <li style="margin-top: 15px;"><span class="job-post-label">Anforderungen</span> {{ post.job_requirements | safe}}</li>
+            </ul>
+          
+          <div class="job-post-apply-button">
+            <a href="{% url 'application-form-page-ger' post.slug %}">
+              <button class="btn btn-outline-info">Bewerben</button>
+            </a>
+          </div>
+          <hr>
+        </div>
+    </div>
+    </article>
+  {% endfor %}
+</div>
+
+{% endblock content %}
