@@ -1,0 +1,20 @@
+# Python virtual environment
+keasbey-website-venv/
+
+# Django secret settings
+**/settings.py
+.env
+
+# Bytecode and cache files
+*.pyc
+__pycache__/
+
+# Django migration files
+*.log
+
+# Ignore database
+db.sqlite3
+
+# Static and media files
+staticfiles/
+media/
