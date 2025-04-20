@@ -39,13 +39,6 @@
 {% if not request.COOKIES.accepted_cookies or request.COOKIES.accepted_cookies != 'true' %}
 <div class="cookie-text">
 
-  <div class="newsletter-container">
-    <img class="newsletter-icon" src="{% static 'blog/media/product-page-icon1.png' %}">
-    <a href="{% url 'newsletter-page' %}"><u>Subscribe to our weekly tech newsletter</u></a> - no spam, just high-signal content!
-  </div>
-
-  <hr class="newsletter-line">
-
   <p style="margin-top: 25px;">This website uses cookies to improve your experience. By continuing to use the 
     website, you accept our <a href="{% url 'terms-page' %}"><span class="policy-link">terms of use</span></a> and <a href="{% url 'privacy-page' %}"><span class="policy-link">cookie policy</span></a>.</p>
   
