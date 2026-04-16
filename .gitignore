@@ -5,6 +5,12 @@
 config.json
 replacements.txt
 
+
+# =========================
+# Other files
+# =========================
+gitworkflow.txt
+
 # =========================
 # Database
 # =========================
