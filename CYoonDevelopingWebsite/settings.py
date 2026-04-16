@@ -92,17 +92,6 @@ WSGI_APPLICATION = 'CYoonDevelopingWebsite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.mysql',
-#        'NAME': 'REMOVED_DB_NAME',
-#        'USER': 'REMOVED_DB_USER',
-#        'PASSWORD': 'REMOVED_DB_PASSWORD',
-#        'HOST': 'localhost',  # Set to the hostname where your MySQL server is running
-#        'PORT': '3306',       # Default MySQL port
-#    }
-#}
-
 
 DATABASES = {
     'default': {
