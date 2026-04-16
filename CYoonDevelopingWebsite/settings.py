@@ -13,26 +13,35 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+import mimetypes
+import json
+
+mimetypes.add_type("text/css", ".css", True)
 
 load_dotenv()
 
-import mimetypes
-mimetypes.add_type("text/css", ".css", True)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+CONFIG_PATH = os.getenv("DJANGO_CONFIG_PATH", BASE_DIR / "config.json")
+
+with open(CONFIG_PATH) as config_file:
+	config = json.load(config_file)
+
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv("SECRET_KEY")  # "abc"
+SECRET_KEY = config["SECRET_KEY"]  # "abc"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config.get("DEBUG", False)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = config.get("ALLOWED_HOSTS", [])
 
 
 # Application definition
@@ -137,25 +146,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = 'static/'
-
-STATIC_FOLDER = BASE_DIR.joinpath('static')
 
 LOGIN_URL = '/login/'
 
 
-#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
 MEDIA_ROOT = BASE_DIR.joinpath('media')
 
 MEDIA_URL = '/media/'
-
-
-STATICFILES_DIRS = [
-    #BASE_DIR / 'static/',
-    STATIC_FOLDER,
-    STATIC_URL,	
-]
 
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -190,11 +189,6 @@ REST_FRAMEWORK = {
 }
 
 
-CORS_ORIGIN_WHITELIST = (
-    'http://localhost:3000',  # React default port = 3000
-    'http://localhost:8000',  # Django default port = 8000
-)
-
 
 CORS_ALLOW_HEADERS = [
     "accept",
@@ -226,16 +220,9 @@ CKEDITOR_CONFIGS = {
 }
 
 
-# Backend access to AWS
-
-AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-AWS_REGION = os.environ.get('AWS_SECRET_ACCESS_KEY')
-
-
 # Backend access to Google ReCaptcha
 
 #SILENCED_SYSTEM_CHECKS = ['django_recaptcha.recaptcha_test_key_error']
-RECAPTCHA_PUBLIC_KEY = os.environ.get('RECAPTCHA_PUBLIC_KEY')
-RECAPTCHA_PRIVATE_KEY = os.environ.get('RECAPTCHA_PRIVATE_KEY')
+RECAPTCHA_PUBLIC_KEY = config['RECAPTCHA_PUBLIC_KEY']
+RECAPTCHA_PRIVATE_KEY = config['RECAPTCHA_PRIVATE_KEY']
 RECAPTCHA_REQUIRED_SCORE = 0.85

@@ -2,6 +2,8 @@
 # Environment variables
 # =========================
 .env
+config.json
+replacements.txt
 
 # =========================
 # Database
