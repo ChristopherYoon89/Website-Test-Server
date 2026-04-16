@@ -25,7 +25,7 @@ load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-CONFIG_PATH = os.getenv("DJANGO_CONFIG_PATH", BASE_DIR / "config.json")
+CONFIG_PATH = os.getenv("DJANGO_CONFIG_PATH", "/etc/config.json")
 
 with open(CONFIG_PATH) as config_file:
 	config = json.load(config_file)
