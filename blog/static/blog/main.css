@@ -206,6 +206,34 @@ main {
 
 
 
+.btn-outline-danger {
+	color: #ff6c6c;
+	border-color: #ff6c6c;
+	background-color: transparent;
+}
+
+
+.btn-outline-danger:hover {
+	color: #ff3636;
+	border-color: #ff3636;
+  background-color: transparent;
+}
+
+
+.btn-outline-danger:focus {
+	outline: none;
+	box-shadow: 0 0 0 0.2rem rgba(23,162,184,.25);
+}
+
+
+.btn-outline-danger:active {
+	color: #fff;
+	background-color: #961313;
+	border-color: #961313;
+}
+
+
+
 .nav-font-size {
   font-size: 0.85rem;
 }
