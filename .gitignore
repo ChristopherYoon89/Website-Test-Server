@@ -24,6 +24,7 @@ venv/
 __pycache__/
 *.py[cod]
 *$py.class
+*.pyc
 
 # =========================
 # Django stuff
