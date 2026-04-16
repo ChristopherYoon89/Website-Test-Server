@@ -1,0 +1,12 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+
+<h3 class="col-lgrey">Your email was removed from the newsletter list!</h3>
+<hr class="border-col-grey">
+
+<div class="small col-lgrey" style="margin-top: 25px;">
+Back to <a href="{% url 'blog-home' %}"><u>home</u></a>
+</div>
+
+{% endblock content %}

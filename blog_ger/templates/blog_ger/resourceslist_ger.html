@@ -1,0 +1,30 @@
+{% extends "blog_ger/base_ger.html" %}
+{% block content %}
+
+<h1 class="col-lgrey">Downloads</h1>
+<hr class="border-col-grey">
+
+{% for resource in resources %}        
+	<article class="resource-item">
+		<div class="resource-item">
+			<small>
+			<a href="{% url 'resources-detail-page-ger' resource.slug %}">
+			{{ resource.name }}
+			</a>
+			</small>
+
+			<span class="text-muted">
+			<small style="margin-right: 25px; margin-left: 25px;">
+			{{ resource.uploaded_on | date:"F j, Y" }}
+			</small>
+			</span>
+		</div>
+
+		<div class="resource-right">
+		<a href="{{ resource.file.url }}" download><small>Download</small></a>
+		</div>
+	</article>  
+	<hr class="border-col-grey">
+{% endfor %}
+
+{% endblock content %}

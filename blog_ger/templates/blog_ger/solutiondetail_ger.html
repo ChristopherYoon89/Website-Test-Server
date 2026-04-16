@@ -1,0 +1,33 @@
+{% extends "blog_ger/base_ger.html" %}
+{% load static %}
+{% block content %}
+
+<article class="media content-section">
+  <div class="media-body">
+    <span class="backlink col-lgrey" onClick="window.history.back();return false;">
+    <- Zurück
+    </span> 
+    
+    <h2 style="margin-top: 25px;"> {{ post.title }}</h2>
+    <hr class="border-col-grey">
+    <p class="article-content">{{ post.content | safe }}</p>
+  </div>
+</article>
+
+<div class="media content-section">
+  <div class="media-body">
+    <div class="body-further-reading">
+      <h3>Neue Release Notes</h3>
+      <hr class="border-col-grey">
+    </div>
+    {% for post in all_release_notes %}
+      <article class="media-body">      
+        <h5><a href="{% url 'release-note-detail-ger' post.slug %}">{{ post.title }}</a></h5>
+          <div class="article-metadata">            
+          <a><small class="text-muted">{{ post.date_posted | date:"F j, Y" }}</small></a>
+          </div>
+      </article>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}

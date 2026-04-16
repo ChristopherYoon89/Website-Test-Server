@@ -1,0 +1,31 @@
+{% extends "blog/base.html" %}
+{% block content %}
+
+<h1 class="col-lgrey">Resources</h1>
+<hr class="border-col-grey">
+
+{% for resource in resources %}
+	<article class="resource-item">
+		<div class="resource-left">
+			<small>
+			<a href="{% url 'resources-detail-page' resource.slug %}">
+			{{ resource.name }}
+			</a>
+			</small>
+
+			<span class="text-muted">
+			<small style="margin-right: 25px; margin-left: 25px;">
+			{{ resource.uploaded_on | date:"F j, Y" }}
+			</small>
+			</span>
+		</div>
+
+		<div class="resource-right">
+			<a href="{{ resource.file.url }}" download><small>Download</small></a>
+		</div>
+		
+	</article>
+	<hr class="border-col-grey">
+{% endfor %}
+
+{% endblock content %}

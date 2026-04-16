@@ -1,0 +1,15 @@
+{% extends "blog/base.html" %}
+{% block content %}
+
+<h1 class="col-lgrey">Solutions</h1>
+<hr class="border-col-grey">
+
+{% for post in solution_post %}
+  <article style="margin-top: 45px;">
+    <h4><a class="url-td" href="{% url 'solution-detail' post.slug %}">{{ post.title }}</a></h4>
+      <p>{{ post.snippet | safe }}</p>
+    <p><a class="read-more-notes col-lgrey" href="{% url 'solution-detail' post.slug %}">Read More </a></p>
+  </article>
+{% endfor %}
+
+{% endblock content %}

@@ -1,0 +1,13 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+
+<h3 class="col-lgrey">Thanks for applying for this job!</h3>
+<hr class="border-col-grey">
+
+<div class="small col-lgrey" style="margin-top: 25px;">
+Back to <a href="{% url 'job-page' %}"><u>job list</u></a>
+</div>
+
+{% endblock content %}

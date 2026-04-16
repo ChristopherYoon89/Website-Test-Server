@@ -1,0 +1,38 @@
+{% load static %}
+
+<nav class="navbar">
+  <div class="container nav-container">
+    <!-- Logo -->
+	<span class="navbar-brand">
+    CHRIS YOON DEVELOPING
+	</span>
+
+    <!-- Hamburger -->
+    <button class="navbar-toggler" id="navToggle">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menu -->
+    <div class="navbar-menu" id="navbarMenu">
+      <ul class="navbar-nav">
+        <li><a class="nav-link" href="{% url 'blog-home' %}">Home</a></li>
+        <li><a class="nav-link" href="{% url 'release-notes-page' %}">Release Notes</a></li>
+        <li><a class="nav-link" href="{% url 'solutions-page' %}">Solutions</a></li>
+        <li><a class="nav-link" href="{% url 'blog-posts-page' %}">Blog</a></li>
+        <li><a class="nav-link" href="{% url 'about-page' %}">About</a></li>
+
+        <!-- Dropdown -->
+        <li class="dropdown">
+          <a class="nav-link dropdown-toggle">
+            <img class="menu-flag-en-icon" src="{% static 'blog/media/Flag_USA.png' %}" alt="English">
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="{% url 'blog-home-ger' %}">
+              <img class="menu-flag-de-icon-dropdown" src="{% static 'blog/media/Flag_Germany.png' %}">
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

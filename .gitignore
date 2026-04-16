@@ -1,0 +1,62 @@
+# =========================
+# Environment variables
+# =========================
+.env
+
+# =========================
+# Database
+# =========================
+db.sqlite3
+
+# =========================
+# Virtual environments
+# (your current one + common ones)
+# =========================
+keasbey-website-venv/
+venv/
+.venv/
+
+# =========================
+# Python cache / bytecode
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# =========================
+# Django stuff
+# =========================
+*.log
+local_settings.py
+
+# Media uploads (usually NOT version controlled)
+media/
+
+# Static files collected by collectstatic
+staticfiles/
+
+# Migrations cache noise (optional safety)
+*/migrations/__pycache__/
+
+# =========================
+# IDE / editor settings
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Testing / coverage
+# =========================
+.coverage
+htmlcov/
+
+# =========================
+# Jupyter (if ever used)
+# =========================
+.ipynb_checkpoints/
