@@ -226,18 +226,6 @@ CKEDITOR_CONFIGS = {
 }
 
 
-# Backend access to email host
-
-#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-#EMAIL_HOST = 'smtp-mail.outlook.com'
-#EMAIL_PORT = REMOVED_EMAIL_PORT
-#EMAIL_USE_TLS = True
-#EMAIL_FROM = 'REMOVED_EMAIL'
-#EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
-#EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
-#DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-
-
 # Backend access to AWS
 
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
