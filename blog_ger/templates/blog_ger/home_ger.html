@@ -89,6 +89,33 @@
         </p>
       </div>
     </li>
+
+    <li class="media my-4">
+      <div class="image-solutions">
+          <p>
+          <img class="mr-3" src="{% static "blog/images/newspsread.png" %}" alt="Weekly Tech Newsletter"> 
+          </p>
+      </div>
+      <div class="media-body">
+        <h2 class="mt-0 mb-1" style="font-size:15pt;">Wöchentliches Tech Briefing</h2>
+        <p class="mt-1">
+        Melde dich für meinen wöchentlichen Newsletter an, der dir Tech-News, Updates, 
+        Neuerscheinungen, Sonderangebote und andere Einblicke direkt in dein Postfach liefert. Er 
+        richtet sich an Kunden und Technikbegeisterte und hält dich nicht nur über meine Produkte 
+        auf dem Laufenden, sondern auch über die Welt der Technologie, Software, KI, Data Science, 
+        digitale Überwachung und verwandte Themen – ohne dein Postfach mit Spam zu überfluten.
+        </p>
+        <p>
+          <details>
+            <summary class="col-lgrey small">Mehr lesen</summary>
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-light" onclick="location.href='{% url 'newsletter-page-ger' %}'">Sign up</li>
+                <li class="list-group-item list-group-item-light" onclick="location.href='{% url 'resources-page-ger' %}'">Download vorherige newsletters</li>
+              </ul>
+          </details>
+        </p>
+      </div>
+    </li>
   </ul>
 </div>
 
