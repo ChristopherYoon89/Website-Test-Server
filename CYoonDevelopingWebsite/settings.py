@@ -24,11 +24,7 @@ load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-CONFIG_PATH = os.getenv("DJANGO_CONFIG_PATH")
-
-if not CONFIG_PATH:
-    # fallback for local development
-    CONFIG_PATH = BASE_DIR / "config.json"
+CONFIG_PATH = "/etc/config.json" if Path("/etc/config.json").exists() else BASE_DIR / "config.json"
 
 with open(CONFIG_PATH) as config_file:
     config = json.load(config_file)
