@@ -120,6 +120,7 @@ class Resource(models.Model):
     description = models.TextField(blank=True)
     file = models.FileField(upload_to='media/resources/')
     uploaded_on = models.DateTimeField(default=timezone.now)
+    publish = models.BooleanField(default=True)
     slug = models.SlugField(max_length=255, unique=True, null=True, blank=True)
 
     def __str__(self):

@@ -255,6 +255,7 @@ class ResourcesGerView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['resources'] = Resource.objects.filter(publish=True).order_by('-uploaded_on')
         return context
 
 
