@@ -660,8 +660,6 @@ a.article-title:hover {
 }
 
 
-
-
 .mr-2 { margin-right: 0.5rem; }
 .mr-3 { margin-right: 1rem; }
 .mr-4 { margin-right: 1.5rem; }
@@ -1154,4 +1152,29 @@ select:focus {
   .dropdown:hover .dropdown-menu {
     display: block;
   }
+}
+
+
+@media (max-width: 768px) {
+
+  .media {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .image-solutions {
+    width: auto;
+    margin: 0 0 20px 0;
+  }
+
+  .image-solutions img {
+    width: 90px; /* adjust if needed */
+    height: auto;
+  }
+
+  .media-body {
+    width: 100%;
+  }
+
 }
