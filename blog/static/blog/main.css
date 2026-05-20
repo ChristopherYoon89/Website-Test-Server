@@ -719,6 +719,12 @@ a.article-title:hover {
   padding: 0 !important;
 }
 
+
+.navbar-brand a:hover{
+  text-decoration: none;
+}
+
+
 /* MENU */
 .navbar-menu {
   display: flex;
@@ -1178,3 +1184,5 @@ select:focus {
   }
 
 }
+
+
