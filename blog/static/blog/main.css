@@ -1168,6 +1168,10 @@ select:focus {
     text-align: center;
   }
 
+  .content-section {
+    text-align: left;
+  }
+
   .image-solutions {
     width: auto;
     margin: 0 0 20px 0;
